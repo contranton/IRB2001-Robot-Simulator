@@ -1,0 +1,108 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nty/global/}
+    \entry{book2}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d49ef068a3d555526a6d04628660d02e}{%
+           family={M.\bibnamedelimi Murray\bibnamedelima R.},
+           familyi={M\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Shankar\bibnamedelimb Sastry\bibnamedelima S.},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim S\bibinitperiod},
+           suffix={Li\bibnamedelima Z.},
+           suffixi={L\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=5773dd16a6c4165712de1bf958cae580}{%
+           family={CRC\bibnamedelima Press},
+           familyi={C\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Inc.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{d49ef068a3d555526a6d04628660d02e}
+      \strng{fullhash}{d49ef068a3d555526a6d04628660d02e}
+      \strng{authornamehash}{d49ef068a3d555526a6d04628660d02e}
+      \strng{authorfullhash}{d49ef068a3d555526a6d04628660d02e}
+      \strng{editornamehash}{5773dd16a6c4165712de1bf958cae580}
+      \strng{editorfullhash}{5773dd16a6c4165712de1bf958cae580}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Mathematical Introduction to Robotic Manipulation}
+      \field{year}{1994}
+      \field{dateera}{ce}
+    \endentry
+    \entry{model}{article}{}
+      \name{author}{1}{}{%
+        {{hash=891371763ad99b7a6a73984ad0117652}{%
+           family={R.\bibnamedelimi Dhaouadi},
+           familyi={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={Abu\bibnamedelimb Hatab\bibnamedelima A.},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{891371763ad99b7a6a73984ad0117652}
+      \strng{fullhash}{891371763ad99b7a6a73984ad0117652}
+      \strng{authornamehash}{891371763ad99b7a6a73984ad0117652}
+      \strng{authorfullhash}{891371763ad99b7a6a73984ad0117652}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Robotics & Automation}
+      \field{title}{Dynamic Modelling of Differential-Drive Mobile Robots using Lagrange and Newton-Euler Methodologies: A Unified Framework}
+      \field{year}{2013}
+      \field{dateera}{ce}
+    \endentry
+    \entry{book1}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ea5395a3c7d1682c565a8c150ca1e802}{%
+           family={W.\bibnamedelimi Spong\bibnamedelima M.},
+           familyi={W\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Vidyasagar\bibnamedelima M.},
+           giveni={V\bibinitperiod\bibinitdelim M\bibinitperiod},
+           suffix={Hutchinson\bibnamedelima S.},
+           suffixi={H\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=e7ca0613e3837ad51fdb23ae4932dab8}{%
+           family={John\bibnamedelimb Wiley\bibnamedelimb &\bibnamedelima Sons},
+           familyi={J\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim &\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Inc.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{ea5395a3c7d1682c565a8c150ca1e802}
+      \strng{fullhash}{ea5395a3c7d1682c565a8c150ca1e802}
+      \strng{authornamehash}{ea5395a3c7d1682c565a8c150ca1e802}
+      \strng{authorfullhash}{ea5395a3c7d1682c565a8c150ca1e802}
+      \strng{editornamehash}{e7ca0613e3837ad51fdb23ae4932dab8}
+      \strng{editorfullhash}{e7ca0613e3837ad51fdb23ae4932dab8}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Robot Modeling and Control}
+      \field{year}{2006}
+      \field{dateera}{ce}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

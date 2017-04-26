@@ -1,0 +1,14 @@
+[0] Config.pm:354> INFO - This is Biber 2.7
+[0] Config.pm:357> INFO - Logfile is 'at.blg'
+[33] biber-MSWIN64:303> INFO - === 
+[56] Biber.pm:359> INFO - Reading 'at.bcf'
+[152] Biber.pm:832> INFO - Using all citekeys in bib section 0
+[168] Biber.pm:3670> INFO - Processing section 0
+[187] Biber.pm:3840> INFO - Looking for bibtex format file 'citations.bib' for section 0
+[191] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[195] bibtex.pm:1292> INFO - Found BibTeX data source 'citations.bib'
+[212] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[212] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[212] Biber.pm:3499> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'es-ES'
+[216] bbl.pm:608> INFO - Writing 'at.bbl' with encoding 'latin1'
+[218] bbl.pm:712> INFO - Output to at.bbl

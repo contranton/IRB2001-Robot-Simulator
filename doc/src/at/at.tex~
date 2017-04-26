@@ -1,0 +1,350 @@
+%------------------------------------------------
+% LaTex File created by Miguel A. Torres-Torriti
+% 2008.03.22
+% REF: Assingments/Tests/
+% REF: Function References and Manual.
+%      Aadded on 2011.03.27 based on the 
+%      Lie Tools Package user's guide.
+%------------------------------------------------
+%1in=25.4mm=72.27pt
+%1pc=12pt (pc Pica, pt Point)
+%1pt=0.35mm
+%Matlab figure ratio X/Y = 1.28
+%
+\documentclass[11pt,letterpaper,twoside]{report}%{article}
+\def\doctitle{Tarea 1}
+\def\docsubtitle{Entrega: 7 de marzo, 2008}
+\def\docdate{2008.03.22}
+\def\coursename{IEE3935 Estimaci\'on y Control Optimo en Rob\'otica}
+\def\authorname{Prof. M. Torres T.}
+\def\deptname{Departamento de Ingenier\'ia El\'ectrica}
+\def\orgname{Pontificia Universidad Cat\'olica de Chile}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{helvet}
+\usepackage{sans}
+\usepackage[latin1]{inputenc}
+\usepackage{hyperref}
+\hypersetup{
+%    bookmarks=true,         % show bookmarks bar?
+%    unicode=false,          % non-Latin characters in Acrobat's bookmarks
+%    pdftoolbar=true,        % show Acrobat's toolbar?
+%    pdfmenubar=true,        % show Acrobat's menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+%    pdftitle={My title},    % title
+%    pdfauthor={Author},     % author
+%    pdfsubject={Subject},   % subject of the document
+%    pdfcreator={Creator},   % creator of the document
+%    pdfproducer={Producer}, % producer of the document
+%    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\usepackage{pdfpages} % para incluir pdfs
+
+%--------- SET DIMENSIONS ---------
+%DEFAULT SIZE: [letterpaper = 8.5in x 11in = 216mm x 279mm]
+\topmargin -15.4mm
+\headheight 12mm
+\headsep .5\baselineskip
+\textheight 239mm
+\footskip 1.5\baselineskip %3.5mm
+%\footheight 0mm
+\oddsidemargin -5.4mm
+\evensidemargin -5.4mm
+\textwidth 176mm
+%\columnsep 0.375in
+
+\parindent 0mm
+\parskip 10pt
+%\bibindent XXmm
+\renewcommand{\baselinestretch}{1.0} %sets line spacing.
+
+%\pagestyle{fancyplain} %forces fancy even on first chapter pages
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%\fancyhead{} % clear all header fields
+%\fancyhead[RO,LE]{\bfseries The performance of new graduates}
+%\fancyfoot{} % clear all footer fields
+%\fancyfoot[LE,RO]{\thepage}
+%\fancyfoot[LO,CE]{From: K. Grant}
+%\fancyfoot[CO,RE]{To: Dean A. Smith}
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+
+\lhead{\footnotesize \sc 
+  \coursename\ - \authorname\\
+  \deptname\\
+  \orgname}
+\chead{}
+\rhead{\sc \doctitle}
+\lfoot{\textrm{\docdate}}
+\cfoot{}
+\rfoot{\textrm{\thepage}}
+
+% Redefine plain pagestyle used in the first page of each chapter
+\fancypagestyle{plain}{%
+%\fancyhf{} % clear all header and footer fields
+\fancyhead[R]{}
+\fancyfoot[R]{\thepage} % except the center
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}}
+%\renewcommand{\thesection}{\textsf{\arabic{section}}.}
+%\renewcommand{\thesubsection}{\textsf{\arabic{section}.\arabic{subsection}.}}
+%\renewcommand{\thefigure}{\textsf{\arabic{figure}}}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+%\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+
+%--------- DEFINITIONS & ABBREVIATIONS ---------
+\def\sectionM#1{\section{\protect \raggedright \textrm{#1}}}
+\def\subsectionM#1{\subsection{\protect \raggedright \textrm{#1}}}
+
+\newcounter{total}
+\setcounter{total}{0}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\def\la#1{\label{eq:#1}}
+\def\re#1{(\ref{eq:#1})}
+\def\bu#1{{\bf \underline{\textrm{#1}}}}
+\def\bs#1{{\bf \textrm{#1}}}
+
+% create an example counter
+\newcounter{examplecounter}[section]
+\renewcommand{\theexamplecounter}{\arabic{section}.\arabic{examplecounter}}
+\newenvironment{example}%
+{\noindent\ignorespaces%
+\stepcounter{examplecounter}%
+\hrule\mbox{}\\%
+\underline{Ejemplo \theexamplecounter }\\%
+}%
+{\hrule
+\par\noindent%
+\ignorespacesafterend}
+
+% make definition boxes
+\newcommand{\defbox}[2][\mbox{}]{%
+\noindent\ignorespaces
+\begin{center}%
+\parbox{0.8\textwidth}{%
+{\em #1}\\%
+\fbox{\parbox{0.75\textwidth}{\centering #2}}}%
+\end{center}%
+\par\noindent%
+\ignorespacesafterend}
+
+% make function references for reference and technical manuals
+\newenvironment{fref}% fref is the function reference environment
+{\begin{tabbing}%
+ \hspace{0.2\textwidth}\=\hspace{0.8\textwidth}\kill%
+}%
+{\end{tabbing}}
+
+% the following commands create fields within the fref environment
+\newcommand{\fpurp}[1]{\bf{Purpose} \> #1\\[\baselineskip]}
+\newcommand{\fsynt}[1]{\bf{Syntax} \> #1\\[\baselineskip]}
+\newcommand{\fdesc}[1]{\bf{Description} \> %
+  \begin{minipage}[t]{0.8\textwidth}#1\end{minipage}\\[\baselineskip]}
+\newcommand{\fargs}[1]{\bf{Arguments} \> #1\\[\baselineskip]}
+\newcommand{\fex}[1]{\bf{Examples} \> %
+  \begin{minipage}[t]{0.8\textwidth}#1\end{minipage}\\[\baselineskip]}
+\newcommand{\fdisc}[1]{\bf{Discussion} \> %
+  \begin{minipage}[t]{0.8\textwidth}#1\end{minipage}\\[\baselineskip]}
+\newcommand{\flim}[1]{\bf{Limitations} \> %
+  \begin{minipage}[t]{0.8\textwidth}#1\end{minipage}\\[\baselineskip]}
+\newcommand{\fsee}[1]{\bf{See Also} \> %
+  \begin{minipage}[t]{0.8\textwidth}#1\end{minipage}\\[\baselineskip]}
+\newcommand{\frefs}[1]{\bf{References} \> %
+  \begin{minipage}[t]{0.8\textwidth}#1\end{minipage}\\[\baselineskip]}
+\newcommand{\fcustom}[2]{%
+  \begin{minipage}[t]{0.2\textwidth}\bf{#1}\end{minipage} \> %
+  \begin{minipage}[t]{0.8\textwidth}#2\end{minipage}\\[\baselineskip]}
+\newcommand{\fempty}[1]{ \> %
+  \begin{minipage}[t]{0.8\textwidth}#1\end{minipage}\\[\baselineskip]}
+\newcommand{\bfverbatim}[1]{\begin{minipage}[t]{0.2\textwidth}\bf{#1}\end{minipage} \> \begin{minipage}[t]{0.8\textwidth}}
+\newcommand{\efverbatim}{\end{minipage}\\[\baselineskip]}
+
+% function reference example
+\def\frefex{%
+\subsection{zfunction}\label{ss:zfunction}%
+\begin{fref}%
+\fpurp{Compute something.}%
+\fsynt{\texttt{zfunction(args)}}%
+\fdesc{This function computes something using the $\alpha(X)$ algorithm.%
+\begin{eqnarray}%
+\alpha(X,Y) \mapsto \alpha(X)\alpha(Y)%
+\end{eqnarray}%
+}%
+\fargs{$v_1$\hspace{1cm}\=The value of the first argument.\\%
+\>$v_2$\>The value of the second argument.\\%
+\>$\vdots$\>\\%
+\>$v_n$\>The value of the $n$-th argument.%
+}%
+\fex{%
+Applying \texttt{zfunction} to three arguments cannot be shown here. %
+Do not use a ``verbatim'' environment nor ``verb'' within any ``fref'' %
+environment command, such as ``fpurp'', ``fex'', etc. %
+Instead make a direct declaration of a ``minipage'' environment %
+within the ``fref'' environment and place the verbatim text within %
+the minipage.}%
+\fdisc{There is nothing to discuss.}%
+\fsee{\texttt{recfunc}, \texttt{strangefunction}}%
+\frefs{See the work by Batwing in [1] and references therein for details on the derivation.}%
+\fcustom{Implementation Notes}{This is an example of a custom-defined field.  It relies on the Deawfulization method to revert the uglyness of the complex expressions.}%
+\fempty{Some other things can be subjectless if they are continuations.}%
+\bfverbatim{Verbatim Space}%
+%\begin{verbatim}
+Must use \texttt{begin}(\texttt{verbatim}) and \texttt{end}(\texttt{verbatim}) to produce verbatim text.  Note the other commands do not accept verbatim text!
+%\end{verbatim}
+\efverbatim%
+\end{fref}%
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%\sffamily
+%\ttfamily
+%\rmfamily
+\noindent
+%
+\mbox{}\\[-0.5\baselineskip]
+{\centering
+{\Large \doctitle}\\
+{\small {\em $\triangleleft$~\docsubtitle~$\triangleright$}}\\[-.0\baselineskip]}
+\rule[0ex]{\textwidth}{.4pt}
+
+
+%%%%%%%%%% PLACE HERE THE QUESTIONS %%%%%%%%%%
+\thispagestyle{plain}
+
+% Comment the following 4 lines to supress the TOC
+\def\contentsname{\normalfont \Large Contents\vspace*{-1cm}}
+\vspace*{-2cm}
+\parbox[t]{\textwidth}{
+{\tableofcontents}}
+
+\section{First Section}
+\begin{enumerate}
+\setcounter{enumi}{\value{total}}
+\item Q1: \bu{This is bold underlined text.}
+\item Q2
+\item Q3
+
+\setcounter{total}{\value{enumi}}
+\end{enumerate}
+
+\begin{figure}[htbp]
+\begin{center}
+ %\includegraphics[scale=0.8]{}
+ \fbox{\rule{5cm}{0cm}\rule{0cm}{5cm}}
+\end{center}
+\vspace*{-\baselineskip}
+\caption{An example of an invisible figure.}
+\label{fig:invisfig} 
+\end{figure}
+
+\newpage
+\section{Second Section}
+\begin{enumerate}
+\setcounter{enumi}{\value{total}}
+\item Q4
+\item Q5
+\item Q6
+
+\setcounter{total}{\value{enumi}}
+\end{enumerate}
+
+\newpage
+\section{Third Section}
+\begin{enumerate}
+\setcounter{enumi}{\value{total}}
+\item Q7
+\item Q8
+\item Q9
+
+\setcounter{total}{\value{enumi}}
+\end{enumerate}
+
+\section{Some Boxed Examples}
+
+\begin{example}
+$X \equiv$ toss a coin ($\leftarrow$ this is the {\em process}).\\[1ex]
+$x_0 = \textrm{head}$\\[1ex]
+$x_1 = \textrm{tail}$\\[1ex]
+\end{example}
+
+\begin{example}
+$X \equiv$ draw some number of candies with a spoon.\\[1ex]
+$P(X=x_i) = \frac{n_i}{N}$ where $n_i$ is the number of times the amount $x_i$  was drawn, $i=1,2,\ldots I$.\\[1ex]
+\end{example}
+
+\section{Some Boxed Definitions}
+
+\defbox[Probability Law]{
+\begin{eqnarray}
+\sum_{i=1}^{\infty} P(x_i) = 1,\hspace{4em}\int_{-\infty}^{\infty} p(x)dx = 1
+\end{eqnarray}
+}
+
+\defbox[\parbox{0.8\textwidth}{Probabilidades no-condicionadas individuales\\{\em (}unconditional individual probabilities{\em )}}]{
+\begin{eqnarray}
+P(x_i)&=&\frac{{n_X}_i}{N},\hspace{4em} i=1,\ldots,I\\
+P(y_j)&=&\frac{{n_Y}_j}{N},\hspace{4em} j=1,\ldots,I
+\end{eqnarray}
+}
+
+\defbox{Something in the air.}
+\chapter*{Appendix: Robot Design and Engineering}\addcontentsline{toc}{chapter}{Appendix: Robot Design and Engineering}
+
+\section{General Background}
+
+\section{Procedure}
+
+\section{Function Reference}
+\frefex
+
+\subsection{recfunc}\label{ss:recfunc}
+\begin{fref}
+%\fpurp{something}
+\bfverbatim{Examples}
+Consider the Zetino basis, \verb|Z|, given in the example for the
+function \verb|zfunction| on page~\pageref{ss:zfunction}.  
+Additionally, suppose that $Z_6=[f_1,f_2]=0$, then the Zetino algebra 
+can be expressed in terms of the following 3-dimensional basis of 
+independent Zetino products, in terms of which \verb|z4| is expressed 
+(see the example for the function \verb|zfunction| on 
+page~\pageref{ss:zfunction}): 
+\begin{verbatim}
+  Z := [f0~, f1~, f0~ *f1~, f0~*(f0~ *f1~),
+         f1~*(f0~*(f0~*f1~))]
+\end{verbatim}
+\efverbatim
+\bfverbatim{Salut!}
+Carambola
+\begin{verbatim}
+Is the problem of creating something literally #@¿&$!* stupid!
+\end{verbatim}
+\efverbatim
+\bfverbatim{}
+Alobmarac
+\begin{verbatim}
+Is the problem of inverting something totally silly!
+\end{verbatim}
+\efverbatim
+\end{fref}
+
+\end{document}

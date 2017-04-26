@@ -1,0 +1,159 @@
+%------------------------------------------------
+% LaTex File created by Miguel A. Torres-Torriti
+% 2008.03.22
+% REF: Assingments/Tests/
+% REF: Function References and Manual.
+%      Added on 2011.03.27 based on the 
+%      Lie Tools Package user's guide.
+%------------------------------------------------
+%1in=25.4mm=72.27pt
+%1pc=12pt (pc Pica, pt Point)
+%1pt=0.35mm
+%Matlab figure ratio X/Y = 1.28
+%
+\documentclass[11pt,letterpaper,twoside]{report}%{article}
+\def\doctitle{Tarea 1}
+\def\docsubtitle{Entrega: 7 de marzo, 2008}
+\def\docdate{2008.03.22}
+\def\coursename{IEE3935 Estimaci\'on y Control Optimo en Rob\'otica}
+\def\authorname{Prof. M. Torres T.}
+\def\deptname{Departamento de Ingenier\'ia El\'ectrica}
+\def\orgname{Pontificia Universidad Cat\'olica de Chile}
+
+\input{header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%\sffamily
+%\ttfamily
+%\rmfamily
+\noindent
+%
+\mbox{}\\[-0.5\baselineskip]
+{\centering
+{\Large \doctitle}\\
+{\small {\em $\triangleleft$~\docsubtitle~$\triangleright$}}\\[-.0\baselineskip]}
+\rule[0ex]{\textwidth}{.4pt}
+
+
+%%%%%%%%%% PLACE HERE THE QUESTIONS %%%%%%%%%%
+\thispagestyle{plain}
+
+% Comment the following 4 lines to supress the TOC
+\def\contentsname{\normalfont \Large Contents\vspace*{-1cm}}
+\vspace*{-2cm}
+\parbox[t]{\textwidth}{
+{\tableofcontents}}
+
+\section{First Section}
+\begin{enumerate}
+\setcounter{enumi}{\value{total}}
+\item Q1: \bu{This is bold underlined text.}
+\item Q2
+\item Q3
+
+\setcounter{total}{\value{enumi}}
+\end{enumerate}
+
+\begin{figure}[htbp]
+\begin{center}
+ %\includegraphics[scale=0.8]{}
+ \fbox{\rule{5cm}{0cm}\rule{0cm}{5cm}}
+\end{center}
+\vspace*{-\baselineskip}
+\caption{An example of an invisible figure.}
+\label{fig:invisfig} 
+\end{figure}
+
+\newpage
+\section{Second Section}
+\begin{enumerate}
+\setcounter{enumi}{\value{total}}
+\item Q4
+\item Q5
+\item Q6
+
+\setcounter{total}{\value{enumi}}
+\end{enumerate}
+
+\newpage
+\section{Third Section}
+\begin{enumerate}
+\setcounter{enumi}{\value{total}}
+\item Q7
+\item Q8
+\item Q9
+
+\setcounter{total}{\value{enumi}}
+\end{enumerate}
+
+\section{Some Boxed Examples}
+
+\begin{example}
+$X \equiv$ toss a coin ($\leftarrow$ this is the {\em process}).\\[1ex]
+$x_0 = \textrm{head}$\\[1ex]
+$x_1 = \textrm{tail}$\\[1ex]
+\end{example}
+
+\begin{example}
+$X \equiv$ draw some number of candies with a spoon.\\[1ex]
+$P(X=x_i) = \frac{n_i}{N}$ where $n_i$ is the number of times the amount $x_i$  was drawn, $i=1,2,\ldots I$.\\[1ex]
+\end{example}
+
+\section{Some Boxed Definitions}
+
+\defbox[Probability Law]{
+\begin{eqnarray}
+\sum_{i=1}^{\infty} P(x_i) = 1,\hspace{4em}\int_{-\infty}^{\infty} p(x)dx = 1
+\end{eqnarray}
+}
+
+\defbox[\parbox{0.8\textwidth}{Probabilidades no-condicionadas individuales\\{\em (}unconditional individual probabilities{\em )}}]{
+\begin{eqnarray}
+P(x_i)&=&\frac{{n_X}_i}{N},\hspace{4em} i=1,\ldots,I\\
+P(y_j)&=&\frac{{n_Y}_j}{N},\hspace{4em} j=1,\ldots,I
+\end{eqnarray}
+}
+
+\defbox{Something in the air.}
+\chapter*{Appendix: Robot Design and Engineering}\addcontentsline{toc}{chapter}{Appendix: Robot Design and Engineering}
+
+\section{General Background}
+
+\section{Procedure}
+
+\section{Function Reference}
+\frefex
+
+\subsection{recfunc}\label{ss:recfunc}
+\begin{fref}
+%\fpurp{something}
+\bfverbatim{Examples}
+Consider the Zetino basis, \verb|Z|, given in the example for the
+function \verb|zfunction| on page~\pageref{ss:zfunction}.  
+Additionally, suppose that $Z_6=[f_1,f_2]=0$, then the Zetino algebra 
+can be expressed in terms of the following 3-dimensional basis of 
+independent Zetino products, in terms of which \verb|z4| is expressed 
+(see the example for the function \verb|zfunction| on 
+page~\pageref{ss:zfunction}): 
+\begin{verbatim}
+  Z := [f0~, f1~, f0~ *f1~, f0~*(f0~ *f1~),
+         f1~*(f0~*(f0~*f1~))]
+\end{verbatim}
+\efverbatim
+\bfverbatim{Salut!}
+Carambola
+\begin{verbatim}
+Is the problem of creating something literally #@?&$!* stupid!
+\end{verbatim}
+\efverbatim
+\bfverbatim{}
+Alobmarac
+\begin{verbatim}
+Is the problem of inverting something totally silly!
+\end{verbatim}
+\efverbatim
+\end{fref}
+
+\end{document}

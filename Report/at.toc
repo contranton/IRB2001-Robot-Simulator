@@ -1,0 +1,7 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Dise\~no mec\'anico del robot}{2}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}Restricciones}{2}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}Configuraci\'on global}{2}{subsection.0.1.2}
+\contentsline {subsection}{\numberline {1.3}Chasis}{2}{subsection.0.1.3}
+\contentsline {section}{\numberline {2}Modelamiento de una pieza}{3}{section.0.2}
+\contentsline {section}{\numberline {3}An\'alisis de un motor}{3}{section.0.3}

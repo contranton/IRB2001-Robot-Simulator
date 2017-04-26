@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\begin{document}
+\pagestyle{empty}
+
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=10em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=2cm,
+    minimum height=2em]
+
+   
+\begin{tikzpicture}[node distance = 2cm, auto]
+
+	% Nodes
+	\node [block] (create) {Crear objetos Ventana y Robot};
+	\node [block, below of=create] (init) {pygame.init()};
+	\node [block, below of=init] (handler) {Handle inputs de teclado y mouse};
+	\node [block, below of=handler] (update) {Actualizar Robot};
+	\mbox{
+	\node [cloud, below of=update] (integrateAcc) {Integrar aceleracion};
+	\node [cloud, below of=integrateAcc] (integrateVel) {Integrar velocidad};
+	\node [cloud, below of=integrateVel] (updateVerts) {Actualizar vertices};
+}
+	\node [block, below of=updateVerts] (drawRob) {Dibujar robot};
+
+
+    % Place nodes
+    %\node [block] (createrob) {Crear objeto robot};
+    %\node [block, below of=createrob] (init) {Inicializar PyGame};
+    %\node [cloud, left of=init] (expert) {expert};
+    %\node [cloud, right of=init] (system) {system};
+    %\node [block, below of=init] (evaluate) {evaluate candidate models};
+    %\node [block, left of=evaluate, node distance=3cm] (update) {update model};
+    %\node [decision, below of=evaluate] (decide) {is best candidate better?};
+    %\node [block, below of=decide, node distance=3cm] (stop) {stop};
+    % Draw edges
+   % \path [line] (init) -- (identify);
+    %\path [line] (identify) -- (evaluate);
+   % \path [line] (evaluate) -- (decide);
+    %\path [line] (decide) -| node [near start] {yes} (update);
+    %\path [line] (update) |- (createrob);
+    %\path [line] (decide) -- node {no}(stop);
+    %\path [line,dashed] (expert) -- (init);
+    %\path [line,dashed] (system) -- (init);
+    %\path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
+
+
+\end{document}
