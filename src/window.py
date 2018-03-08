@@ -69,11 +69,11 @@ class Window():
         # Unit grid
         for i in range(0, self.nx_+1):
             a0 = modf(a_)[1]
-            pg.draw.aaline(surf, (55, 55, 55),
+            pg.draw.aaline(surf, (70, 70, 70),
                            map_(a0+i, d_), map_(a0+i, c_))
         for j in range(0, self.ny_+1):
             d0 = modf(d_)[1]
-            pg.draw.aaline(surf, (55, 55, 55),
+            pg.draw.aaline(surf, (70, 70, 70),
                            map_(a_, d0-j), map_(b_, d0-j))
 
         # Main axes

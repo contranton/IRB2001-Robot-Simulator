@@ -1,0 +1,1 @@
+Don't use Git and Google drive sync on different computers at the same time D:
